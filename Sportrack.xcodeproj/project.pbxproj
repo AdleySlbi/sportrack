@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		873FB15B27B1190400BD736F /* SeanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FB15A27B1190400BD736F /* SeanceView.swift */; };
+		873FB15D27B122B900BD736F /* WorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FB15C27B122B900BD736F /* WorkoutScreen.swift */; };
+		873FB15F27B12C4600BD736F /* AddSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FB15E27B12C4600BD736F /* AddSchedule.swift */; };
+		873FB16127B1312200BD736F /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FB16027B1312200BD736F /* Dashboard.swift */; };
+		874BE81A27AC147500818C31 /* WorkoutSelectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874BE81927AC147500818C31 /* WorkoutSelectType.swift */; };
+		87E1D78327AAD10200743EC5 /* WorkoutPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E1D78227AAD10200743EC5 /* WorkoutPreview.swift */; };
 		87E6330D27A986A300C88FA9 /* SportrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6330C27A986A300C88FA9 /* SportrackApp.swift */; };
 		87E6330F27A986A300C88FA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6330E27A986A300C88FA9 /* ContentView.swift */; };
 		87E6331127A986A900C88FA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E6331027A986A900C88FA9 /* Assets.xcassets */; };
@@ -14,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		873FB15A27B1190400BD736F /* SeanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeanceView.swift; sourceTree = "<group>"; };
+		873FB15C27B122B900BD736F /* WorkoutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutScreen.swift; sourceTree = "<group>"; };
+		873FB15E27B12C4600BD736F /* AddSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchedule.swift; sourceTree = "<group>"; };
+		873FB16027B1312200BD736F /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		874BE81927AC147500818C31 /* WorkoutSelectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectType.swift; sourceTree = "<group>"; };
+		87E1D78227AAD10200743EC5 /* WorkoutPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPreview.swift; sourceTree = "<group>"; };
 		87E6330927A986A200C88FA9 /* Sportrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E6330C27A986A300C88FA9 /* SportrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportrackApp.swift; sourceTree = "<group>"; };
 		87E6330E27A986A300C88FA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +65,12 @@
 			children = (
 				87E6330C27A986A300C88FA9 /* SportrackApp.swift */,
 				87E6330E27A986A300C88FA9 /* ContentView.swift */,
+				87E1D78227AAD10200743EC5 /* WorkoutPreview.swift */,
+				874BE81927AC147500818C31 /* WorkoutSelectType.swift */,
+				873FB15A27B1190400BD736F /* SeanceView.swift */,
+				873FB15C27B122B900BD736F /* WorkoutScreen.swift */,
+				873FB15E27B12C4600BD736F /* AddSchedule.swift */,
+				873FB16027B1312200BD736F /* Dashboard.swift */,
 				87E6331027A986A900C88FA9 /* Assets.xcassets */,
 				87E6331227A986A900C88FA9 /* Preview Content */,
 			);
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873FB15F27B12C4600BD736F /* AddSchedule.swift in Sources */,
+				87E1D78327AAD10200743EC5 /* WorkoutPreview.swift in Sources */,
+				873FB16127B1312200BD736F /* Dashboard.swift in Sources */,
 				87E6330F27A986A300C88FA9 /* ContentView.swift in Sources */,
 				87E6330D27A986A300C88FA9 /* SportrackApp.swift in Sources */,
+				873FB15B27B1190400BD736F /* SeanceView.swift in Sources */,
+				874BE81A27AC147500818C31 /* WorkoutSelectType.swift in Sources */,
+				873FB15D27B122B900BD736F /* WorkoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sportrack/Preview Content\"";
+				DEVELOPMENT_TEAM = 3EN8ZHB54V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -297,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sportrack/Preview Content\"";
+				DEVELOPMENT_TEAM = 3EN8ZHB54V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
