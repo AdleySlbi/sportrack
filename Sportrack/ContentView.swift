@@ -24,34 +24,56 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Profil {
+class Profil: ObservableObject {
     // User Info
-    let firstName: String
-    let lastName: String
-    var email: String
-    var passWord: String
-    let dateOfBirth: Date
-    var weight: Int
-    var height: Int
+    @Published var firstName: String
+    @Published var lastName: String
+    @Published var email: String
+    @Published var passWord: String
+    @Published var dateOfBirth: Date
+    @Published var weight: Int
+    @Published var height: Int
     // Workout Info
-    var workoutComing: [OneWorkout]
-    var workoutPassed: [OneWorkout]
+    @Published var workoutComing: [OneWorkout]
+    @Published var workoutPassed: [OneWorkout]
     // Tracking Info
-    var nbrSeance: Int
-    var intensiteMoy: Intensity
-    var tempsPasse: Int
-    var calBurn: Int
+    @Published var nbrSeance: Int
+    @Published var intensiteMoy: Intensity
+    @Published var tempsPasse: Int
+    @Published var calBurn: Int
     // Type Workout
-    var workoutTracker: [WorkoutType: Int] = [.musculation: 0, .cardio: 0, .crossTraining: 0, .gainage: 0, .stretching : 0]
+    @Published var workoutTracker: [WorkoutType: Int] = [.musculation: 0, .cardio: 0, .crossTraining: 0, .gainage: 0, .stretching : 0]
 //    var crossTraining: Int
 //    var musculation: Int
 //    var cardio: Int
 //    var stretching: Int
 //    var gainage: Int
     // Defi Info
-    var defiComing: [OneDefi]
-    var defiPassed: [OneDefi]
-    var nbrSt: Int
+    @Published var defiComing: [OneDefi]
+    @Published var defiPassed: [OneDefi]
+    @Published var nbrSt: Int
+    
+    init(firstName: String, lastName: String, email: String, passWord: String, dateOfBirth: Date, weight: Int, height: Int, workoutComing: [OneWorkout], workoutPassed: [OneWorkout], nbrSeance: Int, intensiteMoy: Intensity, tempsPasse: Int, calBurn: Int, workoutTracker: [WorkoutType: Int], defiComing: [OneDefi], defiPassed: [OneDefi], nbrSt: Int){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.passWord = passWord
+        self.dateOfBirth = dateOfBirth
+        self.weight = weight
+        self.height = height
+        self.workoutComing = workoutComing
+        self.workoutPassed = workoutPassed
+        self.nbrSeance = nbrSeance
+        self.intensiteMoy = intensiteMoy
+        self.tempsPasse = tempsPasse
+        self.calBurn = calBurn
+        self.workoutTracker = workoutTracker
+        self.defiComing = defiComing
+        self.defiPassed = defiPassed
+        self.nbrSt = nbrSt
+        
+    }
+    
 }
 
 // Element pour un workout
@@ -111,11 +133,13 @@ enum WorkoutType: String {
 }
 
 // Création d'un utilisateur
-var userJulie = Profil(firstName: "Julie", lastName: "Dupont", email: "julie.dupont@gmail.com", passWord: "xxxx", dateOfBirth: Date.now, weight: 65, height: 170, workoutComing: [], workoutPassed: [], nbrSeance: 0, intensiteMoy: .low, tempsPasse: 0, calBurn: 0, workoutTracker: [:], defiComing: [], defiPassed: [], nbrSt: 10 )
+var userJulie = Profil(firstName: "Julie", lastName: "Dupont", email: "julie.dupont@gmail.com", passWord: "xxxx", dateOfBirth: Date.now, weight: 65, height: 170, workoutComing: [firstWorkout, secondWorkout], workoutPassed: [], nbrSeance: 0, intensiteMoy: .low, tempsPasse: 0, calBurn: 0, workoutTracker: [:], defiComing: [], defiPassed: [], nbrSt: 10 )
 
 
 // Création d'un workout
 var firstWorkout = OneWorkout(workoutTitle: "Sport début de semaine", workoutDate: Date.now, valeurSt: 30, exercices: [exoPompe, exoSquat, exoJumpingJack])
+
+var secondWorkout = OneWorkout(workoutTitle: "Sport milieu de semaine", calories: 100, time: 38, workoutDate: Date.now, valeurSt: 30, nbrExoSeance: 3, intensityMoyWorkout: .hight, workoutFinished: false, exercices: [exoPompe, exoSquat, exoJumpingJack])
 
 // Création d'un exercice
 var exoPompe = OneExercice(exoImg: "pompe-img", titleExo: "Pompe", dureeExoSec: 30, repExo: 10, cal: 3, intensity: .low, exoType: .musculation, exoFinished: false)

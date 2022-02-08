@@ -60,7 +60,7 @@ struct Dashboard: View {
                     .pickerStyle(SegmentedPickerStyle())
                 Spacer()
                 // Ajouter les view des upcoming et latest workout
-                OneWorkoutView()
+//                OneWorkoutView()
                 Spacer()
             } // VStack
             .padding()

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WorkoutPreview: View {
+    
+    var workoutComingUser = userJulie.workoutComing
+    var workoutPassedUser = userJulie.workoutPassed
+    
     var body: some View {
         ZStack {
             VStack {
@@ -27,9 +31,17 @@ struct WorkoutPreview: View {
                     Spacer()
                 } // HStack
                 VStack {
-                    OneWorkoutView()
-                    OneWorkoutView()
-                    OneWorkoutView()
+                    // Using value from our struct
+                    // Ici on préfère l'utilisation d'un for each à une liste pour ne pas utiliser le style
+                    // List(workoutComingUser) { workout in
+                    //  OneWorkoutView(workoutData: workout)
+                    // }
+                    
+                    // On boucle sur les éléments de la struct pour les afficher
+                    ForEach(workoutComingUser, id: \.id) { workout in
+                        OneWorkoutView(workoutData: workout)
+                    }
+                    
                 } // VStack
                 .padding()
                 Spacer()
@@ -60,7 +72,8 @@ struct WorkoutPreview_Previews: PreviewProvider {
 
 // OneWorkout View
 struct OneWorkoutView: View {
-    let OneWorkoutData: OneWorkout
+    // Declaration de la variable qui va permettre l'utilisation dynamique des card
+    let workoutData: OneWorkout
     
     var body: some View {
         Button(action: {
@@ -70,10 +83,10 @@ struct OneWorkoutView: View {
                 Image("workout-musculation")
                     .padding()
                 VStack(alignment: .leading) {
-                    Text("Workout Title")
+                    Text(workoutData.workoutTitle)
                         .font(Font.body)
                         .foregroundColor(.black)
-                    Text("XXX Calories | XX minutes")
+                    Text("\(workoutData.calories) Calories | \(workoutData.time) minutes")
                         .font(Font.subheadline)
                         .foregroundColor(.gray)
                     Text("XX/XX/XXXX - 10h")
@@ -83,12 +96,10 @@ struct OneWorkoutView: View {
                 Spacer()
             } // HStack
             .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
-                            .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                )
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.white)
+                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
+            )
         })
-            
-            
     }
 }
